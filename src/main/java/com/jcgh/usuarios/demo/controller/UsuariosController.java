@@ -33,6 +33,25 @@ public class UsuariosController {
         return usuariosService.getId(id);
     }
 
+    @GetMapping("/buscarnombre/{username}")
+    public Usuarios traerPorUsername(@PathVariable String username){
+        return usuariosService.getUsername(username);
+    }
+    @GetMapping("/buscartelefono/{telefono}")
+    public List<Usuarios> traerPorTelefono(@PathVariable Long telefono){
+        return usuariosService.getTelefono(telefono);
+    }
+
+    @GetMapping("/buscaremail/{email}")
+    public List<Usuarios> traerPorEmail(@PathVariable String email){
+        return  usuariosService.getEmail(email);
+    }
+
+    @GetMapping("/buscarestado/{habilitado}")
+    public List<Usuarios> traerPorEstado(@PathVariable boolean habilitado){
+        return usuariosService.getHabilitado(habilitado);
+    }
+
     @PutMapping("/actualizar")
     public Usuarios actualizarUsuarios(@RequestBody Usuarios usuarios){
         return usuariosService.actualizarUsuario(usuarios);

@@ -29,6 +29,36 @@ public class UsuariosImp implements UsuariosService {
     }
 
     @Override
+    public Usuarios getUsername(String username) {
+        return usuariosRepository.findByUsername(username);
+    }
+
+    @Override
+    public List<Usuarios> getEmail(String email) {
+        return usuariosRepository.findByEmail(email);
+    }
+
+    @Override
+    public List<Usuarios> getHabilitado(boolean habilitado) {
+        return usuariosRepository.findByEstado(habilitado);
+    }
+
+    @Override
+    public Usuarios getNombre(String nombre) {
+        return null;
+    }
+
+    @Override
+    public Usuarios getApellido(String Apellido) {
+        return null;
+    }
+
+    @Override
+    public List<Usuarios> getTelefono(Long telefono) {
+        return usuariosRepository.findByTelefonoContaining(telefono);
+    }
+
+    @Override
     public Usuarios actualizarUsuario(Usuarios usuarios) {
         return usuariosRepository.save(usuarios);
     }
