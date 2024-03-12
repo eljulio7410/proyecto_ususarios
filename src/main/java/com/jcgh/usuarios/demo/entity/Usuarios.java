@@ -1,9 +1,11 @@
 package com.jcgh.usuarios.demo.entity;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -32,7 +34,9 @@ public class Usuarios {
     private String perfil;
 
     @ManyToOne
-    @JoinColumn(name = "rol-id")
+    @JoinColumn(name = "rol")
     private Rol rol;
+
+
 
 }
